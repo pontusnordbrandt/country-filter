@@ -1,7 +1,8 @@
 import { useState } from "react";
+import { getPreferredTheme } from "../utils";
 
 export const useTheme = () => {
-  const [theme, setTheme] = useState(localStorage.theme ?? "light");
+  const [theme, setTheme] = useState(getPreferredTheme());
 
   const toggleTheme = () => {
     const isDark = theme === "dark";
